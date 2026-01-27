@@ -1,6 +1,6 @@
-def write_bmp(_name = 'default' | str, _width = 1920 | int , _height = 1080 | int, pixel_map = [] | list) -> bool:
+def write_bmp(_name:str = 'default', _width:int = 1920, _height:int = 1080, pixel_map:list = []) -> bool:
     try:
-        with open("text.bmp", "wb") as bmp_file:
+        with open(str(_name) + ".bmp", "wb") as bmp_file:
             string = '424D'
             size = _width*_height*4+54
             hsize = size.to_bytes(4,'little')
